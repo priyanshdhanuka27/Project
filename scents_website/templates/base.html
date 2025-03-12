@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{% static 'js/script.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>
+      Scents By Scott | {% block title %}{% endblock %}
+    </title>
+
+</head>
+<body>
+  <nav id="navbar">
+    <div class="container-fluid">
+        <div class="logo">
+            <a href="/">
+                <img class="logo" src="{% static 'images/scents.png' %}" alt="Logo Here" style="width: 70px; height: 70px;">
+            </a>
+        </div>
+        <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'cart' %}" style="size: 24px; position: relative;"><i class="ri-shopping-cart-2-line" style="font-size: 22px;"></i></span></a></li>
+                <li><a href="{% url 'client_login' %}" style="size: 24px; position: relative;">
+                    <i class="far fa-user fa-2x" style="font-size: 25px;"></i></a>
+                </li>
+            </ul>
+    </div>
+</nav>
+      {% block content %}
+      {% endblock %}
+      <div class="clr"></div>
+      <footer id="main-footer">Scents By Scott &copy; 2025. All Rights Reserved</footer>      
+  </body>
+  </html>
