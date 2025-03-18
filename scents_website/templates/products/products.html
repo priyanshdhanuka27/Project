@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Products {% endblock %}
+
+{% block nav %} <span id="cartCount" class="cart-count">0</span> {% endblock %}
+
+{% block content %}
+<!-- Products Section -->
+<div class="products-container">
+    
+    <div class="product-card-wrapper">
+        <div class="product-card">
+            <img src="{% static 'images/card1.png' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn" onclick="addToCart('Apple', 1.00)" style="border-radius: 100px;">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/card2.png' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/card3.png' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/card4.png' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="product-card-wrapper">
+        <div class="product-card">
+            <img src="{% static 'images/sample.jpg' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/sample.jpg' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/sample.jpg' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/sample.jpg' %}" alt="Product Image" class="product-card-img">
+            <div class="product-card-body">
+                <h5 class="product-card-title">Product Title</h5>
+                <h5 class="card-subtitle mb-2 text-muted">$0.50 each</h5>
+                <p class="product-card-text">Some quick example text.</p>
+                <a href="#" class="product-btn">View More</a>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- End of Products Section -->
+
+{% endblock %}

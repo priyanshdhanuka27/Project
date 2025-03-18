@@ -23,30 +23,20 @@ function updateCartCount() {
     cartCountElement.textContent = totalCount;
 }
 
+// Function to add a product to the cart
 function addToCart(productName, price) {
-    fetch('/cart/add/', {  // Ensure this endpoint exists in your Django app
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCSRFToken() // Ensure CSRF protection
-        },
-        body: JSON.stringify({ name: productName, price: price })
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message || productName + " added to cart!");
-        updateCartCount();
-    })
-    .catch(error => console.error('Error:', error));
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    // Check if the item is already in the cart
+    let existingItem = cartItems.find(item => item.name === productName);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cartItems.push({ name: productName, price: price, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    updateCartCount();
+    // alert(productName + ' has been added to the cart!');
 }
-
-// Function to get CSRF token from Django
-function getCSRFToken() {
-    return document.cookie.split('; ')
-        .find(row => row.startsWith('csrftoken'))
-        ?.split('=')[1];
-}
-
 
 // Call the function initially to set the initial count
 updateCartCount();
